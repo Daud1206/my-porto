@@ -1,0 +1,258 @@
+/* Home.css */
+
+/* Global Styles */
+body {
+  background-color: #121212;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  backdrop-filter: blur(12px);
+  background-color: rgba(18, 18, 18, 0.6); /* transparan gelap */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 100;
+  margin: 0;
+  padding: 0;
+}
+
+.nav {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px; /* lebih kecil dan rapi */
+}
+
+/* Logo */
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #61dafb;
+  letter-spacing: -0.5px;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  font-size: 0.95rem;
+  color: #e0e1dd;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.menu li a:hover {
+  color: #61dafb;
+}
+
+/* Saat scroll - beri background solid */
+.header.scrolled {
+  background-color: rgba(18, 18, 18, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Profile Section */
+.profile-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #61dafb;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #61dafb;
+  font-weight: bold;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #2a2a2a;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  width: 200px;
+  text-align: left;
+  font-size: 0.9rem;
+  z-index: 200;
+  color: #e0e1dd;
+}
+
+.profile-dropdown p {
+  margin: 5px 0;
+}
+
+.profile-name {
+  font-weight: bold !important;
+}
+
+.profile-title,
+.profile-email {
+  color: #cfcfcf !important;
+}
+
+.profile-divider {
+  border: 1px solid #333;
+  margin: 10px 0;
+}
+
+.profile-action {
+  cursor: pointer;
+  color: #61dafb !important;
+  transition: color 0.3s;
+}
+
+.profile-action:hover {
+  color: #21a1f1 !important;
+}
+
+.hero {
+  text-align: center;
+  padding: 160px 20px 40px;
+  color: #e0e1dd;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #61dafb;
+  margin: 0 0 10px 0;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #cfcfcf;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: #cfcfcf;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Box Container - Only for Experience, Skills, Projects */
+.box-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 60px 20px;
+  gap: 30px;
+}
+
+.box {
+  width: 250px;
+  height: 150px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #e0e1dd;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  border: 1px solid #333;
+  cursor: pointer;
+}
+
+.box:hover {
+  transform: scale(1.08);
+  background: linear-gradient(145deg, #61dafb, #21a1f1);
+  color: #fff;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+  border-color: #61dafb;
+}
+
+.box-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.box-text {
+  font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 0;
+  }
+
+  .menu {
+    gap: 20px;
+  }
+
+  .hero {
+    padding: 140px 20px 40px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .box-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .profile-dropdown {
+    right: -50px;
+  }
+}
