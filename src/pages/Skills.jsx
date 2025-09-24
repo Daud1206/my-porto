@@ -233,7 +233,7 @@ const Skills = () => {
             <p>Check out my projects or let's discuss how I can contribute to your team</p>
             <div className="cta-buttons">
               <a 
-                href="https://github.com/dauddavid" 
+                href="https://github.com/Daud1206" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="cta-button primary github-button"
