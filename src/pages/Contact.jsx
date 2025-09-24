@@ -57,7 +57,7 @@ const Contact = () => {
       display: 'Daud -',
       icon: '💼',
       color: '#0077B5',
-      action: 'https:/linkedin.com/in/davd2005',
+      action: 'https://www.linkedin.com/in/davd2005',
       copyable: false,
       description: 'Connect with me professionally'
     },
