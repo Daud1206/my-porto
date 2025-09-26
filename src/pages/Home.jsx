@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Home.css';
 import { Link } from "react-router-dom";
 import { FaLaptopCode, FaRobot, FaCloud, FaLock, FaMicrochip } from "react-icons/fa";
-import { FiEye } from "react-icons/fi";
+import { FiEye, FiFileText } from "react-icons/fi"; // Added FiFileText for PDF icon
 
 const Home = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -126,9 +126,27 @@ const Home = () => {
         </Link>
       </div>
 
-      {/* CV Section - View*/}
+      {/* CV Section - Enhanced */}
       <section className="cv-section">
-        <h2>View my CV</h2>
+        <h2>View My CV</h2>
+        
+        {/* New: Descriptive paragraph */}
+        <p className="cv-description">
+          Discover my professional journey, key skills, Educations, and projects as a Software Engineer.
+          Ready to collaborate? Take a look!
+        </p>
+
+        {/* New: CV Preview Mockup */}
+        <div className="cv-preview-mockup">
+          <div className="cv-mockup-icon">
+            <FiFileText size={48} />
+          </div>
+          <div className="cv-mockup-text">
+            <h3>Daud's Resume</h3>
+            <p>Software Engineering Portfolio</p>
+          </div>
+        </div>
+
         <div className="cv-preview-container">
           {/* View Button - Opens PDF in new tab */}
           <button

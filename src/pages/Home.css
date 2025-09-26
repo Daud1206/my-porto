@@ -8,7 +8,6 @@
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  /* background: radial-gradient(circle at top left, #0f172a, #1e293b); */
 }
 
 /* =============================
@@ -296,30 +295,79 @@
 }
 
 /* =============================
-   CV Section
+   CV Section Enhancements
 ============================= */
 .cv-section {
   text-align: center;
-  padding: 60px 20px 80px; 
+  padding: 80px 20px 80px; /* Increased top padding for new elements */
   background: linear-gradient(145deg, rgba(30, 30, 30, 0.8), rgba(42, 42, 42, 0.8)); /* Subtle dark gradient to blend with theme */
-  margin: 0 20px;
-  border-radius: 15px;
+  margin: 40px 20px 80px; /* Added top margin to separate from boxes */
+  border-radius: 20px; /* Slightly larger radius for a softer look */
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   position: relative;
   z-index: 10;
+  border: 1px solid rgba(97, 218, 251, 0.2); /* New: Subtle glowing border */
+  animation: fadeInUp 0.8s ease-out; /* New: Fade-in animation */
 }
 
 .cv-section h2 {
   font-size: 2rem;
   color: #61dafb;
-  margin: 0 0 20px 0;
+  margin: 0 0 15px 0;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(97, 218, 251, 0.5); /* New: Subtle glow on title */
+}
+
+/* New: Descriptive paragraph */
+.cv-description {
+  font-size: 1.1rem;
+  color: #cfcfcf;
+  max-width: 500px;
+  margin: 0 auto 30px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/*CV Preview*/
+.cv-preview-mockup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(97, 218, 251, 0.05); /* Subtle cyan tint */
+  border-radius: 15px;
+  border: 1px solid rgba(97, 218, 251, 0.1);
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cv-mockup-icon {
+  color: #61dafb;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 5px rgba(97, 218, 251, 0.3)); /* Glow effect */
+}
+
+.cv-mockup-text h3 {
+  margin: 0 0 5px 0;
+  color: #e0e1dd;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
-/* Container for CV buttons (side-by-side on desktop, stacked on mobile) */
+.cv-mockup-text p {
+  margin: 0;
+  color: #cfcfcf;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Container for CV buttons (centered for single button, responsive for future additions) */
 .cv-preview-container {
   display: flex;
   justify-content: center;
@@ -327,62 +375,135 @@
   flex-wrap: wrap;
 }
 
-/* Base styles for CV action buttons (shared by View) */
+/* Base styles for CV action buttons*/
 .cv-action-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
+  justify-content: center;
+  gap: 10px; 
+  padding: 14px 28px;
   border: none;
-  border-radius: 10px;
+  border-radius: 50px; 
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
+  text-transform: uppercase; 
+  letter-spacing: 0.5px; 
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
   position: relative;
   overflow: hidden;
-  text-decoration: none; /* For Link elements */
-  min-width: 140px; /* Ensures consistent width */
+  text-decoration: none;
+  min-width: 160px; 
   color: white;
+  backdrop-filter: blur(10px);
+  background: rgba(97, 218, 251, 0.15); 
+  border: 2px solid rgba(97, 218, 251, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(97, 218, 251, 0.2), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.1); 
+  animation: buttonPulse 2s ease-in-out infinite alternate; 
 }
 
+@keyframes buttonPulse {
+  0% {
+    box-shadow: 
+      0 8px 32px rgba(97, 218, 251, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 
+      0 8px 32px rgba(97, 218, 251, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Shine effect on hover */
 .cv-action-btn::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
 }
 
 .cv-action-btn:hover::before {
-  opacity: 1;
+  left: 100%; 
 }
 
+/* Hover states */
 .cv-action-btn:hover {
-  transform: translateY(-2px) scale(1.05);
+  transform: translateY(-3px) scale(1.05); 
+  background: rgba(97, 218, 251, 0.25); 
+  border-color: rgba(97, 218, 251, 0.5);
+  box-shadow: 
+    0 12px 40px rgba(97, 218, 251, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 0 20px rgba(97, 218, 251, 0.3); 
+  animation: none; 
 }
 
 .cv-action-btn:active {
-  transform: translateY(0) scale(0.98);
+  transform: translateY(-1px) scale(1.02); 
+  box-shadow: 
+    0 4px 20px rgba(97, 218, 251, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.cv-action-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.5); /* Accessibility focus ring */
 }
 
 .cv-action-btn span {
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
+  z-index: 1; /* Above shine */
 }
 
-/* View Button (Blue theme for navigation to CV page) */
+/* Icon styling */
+.cv-action-btn svg {
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.cv-action-btn:hover svg {
+  transform: scale(1.1); /* Icon zoom on hover */
+}
+
+/* Specific to View Button (Cyan/Blue theme) */
 .view-btn {
-  background: linear-gradient(135deg, #61dafb, #21a1f1);
-  box-shadow: 0 4px 15px rgba(97, 218, 251, 0.3);
+  background: rgba(97, 218, 251, 0.15); /* Base glassmorphism */
+  border-color: rgba(97, 218, 251, 0.3);
 }
 
 .view-btn:hover {
-  box-shadow: 0 8px 25px rgba(97, 218, 251, 0.4);
-  background: linear-gradient(135deg, #21a1f1, #0e7490);
+  background: rgba(33, 161, 241, 0.25); /* Deeper blue shift */
+  border-color: rgba(33, 161, 241, 0.5);
+  box-shadow: 
+    0 12px 40px rgba(33, 161, 241, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 0 20px rgba(33, 161, 241, 0.3); /* Ring glow */
 }
 
+/* Fade-in animation for the section */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* =============================
    Responsive Design
@@ -412,7 +533,7 @@
 
   .cv-section {
     padding: 40px 20px 60px;
-    margin: 0 10px;
+    margin: 20px 10px 60px;
   }
 
   .cv-section h2 {
@@ -421,74 +542,6 @@
 
   .cv-preview-container {
     gap: 12px;
-    flex-direction: column; /* Stack buttons on tablet */
-    align-items: center;
-  }
-
-  .cv-action-btn {
-    padding: 10px 20px;
-    font-size: 0.95rem;
-    min-width: 120px;
-    gap: 6px;
-  }
-
-  .cv-action-btn span {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .box-container {
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-  }
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .hero-description {
-    font-size: 0.9rem;
-  }
-
-  .menu {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
-
-  .profile-dropdown {
-    right: -50px;
-  }
-
-  .cv-section {
-    padding: 30px 15px 50px;
-    margin: 0 5px;
-  }
-
-  .cv-section h2 {
-    font-size: 1.6rem;
-  }
-
-  .cv-preview-container {
-    gap: 10px;
-  }
-
-  .cv-action-btn {
-    padding: 10px 16px;
-    font-size: 0.9rem;
-    min-width: 110px;
-    gap: 4px;
-    width: 100%; /* Full width on small mobile for better touch */
-    justify-content: center;
-  }
-
-  .cv-action-btn span {
-    font-size: 0.85rem;
+    flex-direction: column; /* Stack if multiple buttons added later */
   }
 }
