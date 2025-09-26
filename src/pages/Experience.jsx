@@ -56,8 +56,8 @@ const Experience = () => {
       position: "Front-End Developer",
       duration: "2025",
       location: "Jakarta, Indonesia",
-      description: "Developed a front-end web application called TaskManager. The application allows users to manage tasks efficiently and collaborate with team members in real time. Focused on creating a responsive, clean, and user-friendly interface.",
-      technologies: ["HTML", "CSS", "JavaScript", "React.js", "Git"],
+      description: "Developed a front-end music website focused on simplicity and user needs. The platform allows users to easily explore, play, and organize music without complexity, offering a clean, responsive, and intuitive interface for a seamless listening experience.",
+      technologies: ["HTML", "CSS", "JavaScript", "Git"],
       achievements: [
         "Delivered the project within the given deadline as part of the university coursework.",
         "Learned and implemented React.js",
@@ -71,7 +71,7 @@ const Experience = () => {
       duration: "2025",
       location: "Jakarta, Indonesia",
       description: "Refactored existing codebase to improve maintainability, readability, and performance by restructuring components, optimizing rendering, and enforcing coding standards.",
-      technologies: ["Java", "Git"],
+      technologies: ["Java", "Git", "XAMPP"],
       achievements: [
         "Improved code readability and maintainability by applying clean code principles.",
         "Enhanced application performance and reduced bugs by optimizing existing code structure.",
@@ -164,7 +164,7 @@ const Experience = () => {
           <div className="timeline-container">
             <div className="timeline-line"></div>
             {experiences.map((exp) => (
-              <div 
+              <div
                 key={exp.id}
                 className={`experience-card ${animatedItems.includes(exp.id) ? 'animate-in' : ''}`}
                 data-id={exp.id}
@@ -207,11 +207,15 @@ const Experience = () => {
         {/* Call to Action */}
         <section className="cta-section fade-in-up">
           <div className="cta-content">
-            <h2>Interested in Working Together?</h2>
-            <p>Let's discuss how my experience can contribute to your next project</p>
-            <Link to="/contact">
-              <button className="cta-button">Get In Touch</button>
-            </Link>
+            <h2>Check the project i have done</h2>
+            <a
+              href="https://www.canva.com/design/DAGzOvhqNgg/mUI6bSiTEY4nUc2GS-DJ7w/edit?utm_content=DAGzOvhqNgg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="cta-button">View Project</button>
+            </a>
+
           </div>
         </section>
       </div>
