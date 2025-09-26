@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Home.css';
 import { Link } from "react-router-dom";
 import { FaLaptopCode, FaRobot, FaCloud, FaLock, FaMicrochip } from "react-icons/fa";
+import { FiEye } from "react-icons/fi";
 
 const Home = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -10,11 +11,17 @@ const Home = () => {
     setIsProfileOpen(!isProfileOpen);
   };
 
-  // Generate tech icons instead of random shapes
+  // View CV Handler - Opens PDF in new tab for viewing
+  const handleView = () => {
+    // Opens /CV.pdf in new tab (browser PDF viewer)
+    window.open('/CV.pdf', '_blank', 'noopener,noreferrer');
+  };
+
+  // Generate tech icons 
   const generateTechIcons = () => {
     const icons = [FaLaptopCode, FaRobot, FaCloud, FaLock, FaMicrochip];
     const techShapes = [];
-    
+
     for (let i = 0; i < 15; i++) {
       const Icon = icons[Math.floor(Math.random() * icons.length)];
       techShapes.push({
@@ -77,7 +84,7 @@ const Home = () => {
           {/* Profile */}
           <div className="profile-container" onClick={toggleProfile}>
             <div className="profile-pic">D</div>
-            
+
             {isProfileOpen && (
               <div className="profile-dropdown">
                 <p className="profile-name">Daud</p>
@@ -118,6 +125,21 @@ const Home = () => {
           <div className="box-text">Contact</div>
         </Link>
       </div>
+
+      {/* CV Section - View*/}
+      <section className="cv-section">
+        <h2>View my CV</h2>
+        <div className="cv-preview-container">
+          {/* View Button - Opens PDF in new tab */}
+          <button
+            className="cv-action-btn view-btn"
+            onClick={handleView}
+          >
+            <FiEye size={16} />
+            <span>View CV</span>
+          </button>
+        </div>
+      </section>
     </div>
   );
 };

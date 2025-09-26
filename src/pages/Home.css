@@ -296,6 +296,95 @@
 }
 
 /* =============================
+   CV Section
+============================= */
+.cv-section {
+  text-align: center;
+  padding: 60px 20px 80px; 
+  background: linear-gradient(145deg, rgba(30, 30, 30, 0.8), rgba(42, 42, 42, 0.8)); /* Subtle dark gradient to blend with theme */
+  margin: 0 20px;
+  border-radius: 15px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 10;
+}
+
+.cv-section h2 {
+  font-size: 2rem;
+  color: #61dafb;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+}
+
+/* Container for CV buttons (side-by-side on desktop, stacked on mobile) */
+.cv-preview-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Base styles for CV action buttons (shared by View) */
+.cv-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none; /* For Link elements */
+  min-width: 140px; /* Ensures consistent width */
+  color: white;
+}
+
+.cv-action-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cv-action-btn:hover::before {
+  opacity: 1;
+}
+
+.cv-action-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.cv-action-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.cv-action-btn span {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* View Button (Blue theme for navigation to CV page) */
+.view-btn {
+  background: linear-gradient(135deg, #61dafb, #21a1f1);
+  box-shadow: 0 4px 15px rgba(97, 218, 251, 0.3);
+}
+
+.view-btn:hover {
+  box-shadow: 0 8px 25px rgba(97, 218, 251, 0.4);
+  background: linear-gradient(135deg, #21a1f1, #0e7490);
+}
+
+
+/* =============================
    Responsive Design
 ============================= */
 @media (max-width: 768px) {
@@ -319,6 +408,32 @@
 
   .hero-subtitle {
     font-size: 1.1rem;
+  }
+
+  .cv-section {
+    padding: 40px 20px 60px;
+    margin: 0 10px;
+  }
+
+  .cv-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .cv-preview-container {
+    gap: 12px;
+    flex-direction: column; /* Stack buttons on tablet */
+    align-items: center;
+  }
+
+  .cv-action-btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    min-width: 120px;
+    gap: 6px;
+  }
+
+  .cv-action-btn span {
+    font-size: 0.9rem;
   }
 }
 
@@ -349,5 +464,31 @@
 
   .profile-dropdown {
     right: -50px;
+  }
+
+  .cv-section {
+    padding: 30px 15px 50px;
+    margin: 0 5px;
+  }
+
+  .cv-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .cv-preview-container {
+    gap: 10px;
+  }
+
+  .cv-action-btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    min-width: 110px;
+    gap: 4px;
+    width: 100%; /* Full width on small mobile for better touch */
+    justify-content: center;
+  }
+
+  .cv-action-btn span {
+    font-size: 0.85rem;
   }
 }
