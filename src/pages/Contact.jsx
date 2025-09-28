@@ -145,11 +145,8 @@ const Contact = () => {
             {isProfileOpen && (
               <div className="profile-dropdown">
                 <p className="profile-name">Daud</p>
-                <p className="profile-title">Front-End Developer</p>
+                <p className="profile-title">Software Engineering</p>
                 <p className="profile-email">dauddavid511@email.com</p>
-                <hr className="profile-divider" />
-                <p className="profile-action">Settings</p>
-                <p className="profile-action">Logout</p>
               </div>
             )}
           </div>
