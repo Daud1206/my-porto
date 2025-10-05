@@ -83,7 +83,11 @@ const Home = () => {
 
           {/* Profile */}
           <div className="profile-container" onClick={toggleProfile}>
-            <div className="profile-pic">D</div>
+            <img
+              src="/img/Pas-foto.png"
+              alt="Profile"
+              className="profile-pic"
+            />
 
             {isProfileOpen && (
               <div className="profile-dropdown">
@@ -93,6 +97,7 @@ const Home = () => {
               </div>
             )}
           </div>
+
         </nav>
       </header>
 
@@ -129,7 +134,7 @@ const Home = () => {
       {/* CV Section - Enhanced */}
       <section className="cv-section">
         <h2>View My CV</h2>
-        
+
         {/* New: Descriptive paragraph */}
         <p className="cv-description">
           Discover my professional journey, key skills, Educations, and projects as a Software Engineer.

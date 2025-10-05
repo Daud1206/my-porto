@@ -118,7 +118,12 @@ const Experience = () => {
 
           {/* Profile */}
           <div className="profile-container" onClick={toggleProfile}>
-            <div className="profile-pic">D</div>
+            <img
+              src="/img/Pas-foto.png"
+              alt="Profile"
+              className="profile-pic"
+            />
+
             {isProfileOpen && (
               <div className="profile-dropdown">
                 <p className="profile-name">Daud</p>
@@ -204,13 +209,13 @@ const Experience = () => {
         {/* Call to Action */}
         <section className="cta-section fade-in-up">
           <div className="cta-content">
-            <h2>Check the project i have done</h2>
+            <h2>Check all my experience</h2>
             <a
               href="https://www.canva.com/design/DAGzOvhqNgg/mUI6bSiTEY4nUc2GS-DJ7w/edit?utm_content=DAGzOvhqNgg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="cta-button">View Project</button>
+              <button className="cta-button">View Experience</button>
             </a>
 
           </div>

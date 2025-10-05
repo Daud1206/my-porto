@@ -138,10 +138,12 @@ const Contact = () => {
 
           {/* Profile */}
           <div className="profile-container" onClick={toggleProfile}>
-            <div className="profile-pic">
-              D
-            </div>
-            
+            <img
+              src="/img/Pas-foto.png"
+              alt="Profile"
+              className="profile-pic"
+            />
+
             {isProfileOpen && (
               <div className="profile-dropdown">
                 <p className="profile-name">Daud</p>
